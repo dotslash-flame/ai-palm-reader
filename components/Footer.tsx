@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Twitter, Mail, ExternalLink, Sparkles, Heart } from 'lucide-react';
+import { Mail, ExternalLink, Sparkles, Heart, Linkedin, Instagram } from 'lucide-react';
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
             {/* Tech badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-800/50 to-indigo-800/50 rounded-full border border-purple-700/30 backdrop-blur-sm">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm text-gray-300">Powered by AI & built for DEV Challenge</span>
+              <span className="text-sm text-gray-300">Powered by AI & built by DotSlash</span>
             </div>
           </motion.div>
 
@@ -53,11 +53,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li>
                 <Link 
-                  href="https://ehernandezvilla.github.io/" 
+                  href="https://github.com/dotslash-flame" 
                   className="group flex items-center gap-2 text-gray-300 hover:text-purple-300 transition-colors"
                 >
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  About Me
+                  About Us
                 </Link>
               </li>
               <li>
@@ -88,26 +88,38 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-6 text-purple-300">Let&apos;s Connect</h4>
             <div className="space-y-4">
               <a 
-                href="https://x.com/ehernandezvilla" 
+                href="https://www.instagram.com/dotslashflame/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
               >
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                  <Twitter className="w-4 h-4 text-white" />
+                  <Instagram className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-gray-300 group-hover:text-white transition-colors">@ehernandezvilla</span>
+                <span className="text-gray-300 group-hover:text-white transition-colors">DotSlash FLAME</span>
+              </a>
+
+              <a 
+                href="https://www.linkedin.com/in/dotslash-flame/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                  <Linkedin className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-gray-300 group-hover:text-white transition-colors">DotSlash FLAME</span>
               </a>
               
               <a 
-                href="mailto:eduardo.hernandez@bakslash.com"
+                href="mailto:dotslash@flame.edu.in"
                 className="group flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
               >
                 <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
                   <Mail className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-gray-300 group-hover:text-white transition-colors text-sm">
-                  eduardo.hernandez@bakslash.com
+                  dotslash@flame.edu.in
                 </span>
               </a>
             </div>
@@ -123,13 +135,11 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Palm Reader AI. Crafted with <Heart className="inline w-4 h-4 text-red-400 mx-1" /> for the DEV Community.
+              © {currentYear} Palm Reader AI. Crafted with <Heart className="inline w-4 h-4 text-red-400 mx-1" /> by DotSlash.
             </p>
             
             <div className="flex items-center gap-4 text-xs text-gray-500">
               <span>Built with Next.js</span>
-              <span>•</span>
-              <span>Powered by Pinata</span>
               <span>•</span>
               <span>AI Enhanced</span>
             </div>

@@ -113,7 +113,9 @@ export default function Home() {
           </Tabs>
         </motion.div>
 
-        <HowToUse />
+        <div className="mt-12">
+          <HowToUse />
+        </div>
       </main>
       
       <Footer />

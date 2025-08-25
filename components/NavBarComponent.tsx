@@ -115,7 +115,7 @@ const Navbar: React.FC = () => {
             {/* Desktop CTA & External Links */}
             <div className="hidden lg:flex items-center gap-3">
               <Link
-                href="https://github.com/ehernandezvilla"
+                href="https://github.com/dotslash-flame"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-gray-600 hover:text-purple-600 transition-colors duration-200 rounded-lg hover:bg-purple-50"
@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
               </Link>
               
               <Link
-                href="https://ehernandezvilla.github.io/"
+                href="https://sites.google.com/flame.edu.in/dotslash/home"
                 target="_blank"
                 rel="noopener noreferrer"
               >

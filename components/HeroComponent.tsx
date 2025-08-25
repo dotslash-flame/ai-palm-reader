@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Pinata Palm Reader AI
+          Palm Reader AI
         </motion.h1>
         <motion.p 
           className="text-xl md:text-2xl text-yellow-100 max-w-2xl font-serif"
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          Unlock the secrets of your future with our mystical AI palm reading
+          Unlock the secrets of your future with DotSlash&apos;s mystical AI palm reading
         </motion.p>
       </div>
     </div>

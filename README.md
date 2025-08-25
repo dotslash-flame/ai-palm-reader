@@ -45,7 +45,8 @@ Note: This deployment is customized by DotSlash (FLAME University) for the Club 
 1. Clone the repository:
    ```bash
    # Original upstream repository
-   git clone https://github.com/ehernandezvilla/palm-reader-ai
+   # git clone https://github.com/ehernandezvilla/palm-reader-ai
+   git clone https://github.com/dotslash-flame/ai-palm-reader
    ```
 
 2. Install dependencies:

@@ -1,23 +1,23 @@
 import { motion } from 'framer-motion';
-import { Upload, Sparkles, Clock, ArrowRight } from 'lucide-react';
+import { Camera, Sparkles, Eye, ArrowRight } from 'lucide-react';
 
 const steps = [
   {
-    icon: <Upload className="w-6 h-6" />,
-    title: "Upload or Capture",
-    description: "Upload a clear photo of your palm or capture one instantly with your camera.",
+    icon: <Camera className="w-6 h-6" />,
+    title: "Capture or Upload",
+    description: "Take a photo of your palm or upload an existing image. Your photo stays private in your browser.",
     color: "from-violet-500 to-purple-600"
   },
   {
-    icon: <Sparkles className="w-6 h-6" />,
-    title: "AI Analysis",
-    description: "Our advanced mystical AI analyzes your palm lines and reveals hidden patterns.",
+    icon: <Eye className="w-6 h-6" />,
+    title: "Hand Validation",
+    description: "Our AI validates that your palm is clearly visible and ready for accurate analysis.",
     color: "from-emerald-500 to-teal-600"
   },
   {
-    icon: <Clock className="w-6 h-6" />,
-    title: "Discover Insights",
-    description: "Receive personalized insights about your personality, future, and life path.",
+    icon: <Sparkles className="w-6 h-6" />,
+    title: "Mystical Reading",
+    description: "Gemini AI analyzes your palm lines and provides personalized insights about your destiny.",
     color: "from-amber-500 to-orange-600"
   },
 ];

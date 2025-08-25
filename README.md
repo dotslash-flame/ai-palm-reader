@@ -3,14 +3,15 @@
 ![Tarot img](https://images.unsplash.com/photo-1600430073932-e915854d9d4d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D "Palm Reader AI")
 [Image: Unsplash - Viva Luna Studios](https://unsplash.com/@vivalunastudios)
 
-Palm Reader AI is an innovative (but mostly fun) web application that uses artificial intelligence to analyze palm images and provide mystical readings. This project was developed as part of the Dev Pinata challenge, showcasing the integration of AI technologies with decentralized storage solutions.
+Palm Reader AI is an innovative (but mostly fun) web application that uses Google's Gemini AI to analyze palm images and provide mystical readings. Images are processed locally in your browser for privacy, with only the image data sent to Gemini for analysis.
 
 ## 🌟 Features
 
-- Upload palm images for AI analysis
-- Receive personalized palm readings
-- Text-to-speech functionality for audio readings
-- Gallery of past readings
+- Upload or capture palm images for AI analysis
+- Hand detection validation using MediaPipe
+- Privacy-focused: images stored locally in browser
+- Receive personalized palm readings from Gemini AI
+- Gallery of past readings with local storage
 - Responsive and mystical UI design
 
 ## 🚀 Tech Stack
@@ -20,14 +21,14 @@ Palm Reader AI is an innovative (but mostly fun) web application that uses artif
 - **UI Components**: shadcn/ui
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **API Requests**: Axios
-- **Text-to-Speech**: Hugging Face Inference API
-- **Decentralized Storage**: Pinata IPFS
+- **Hand Detection**: MediaPipe Tasks Vision
+- **AI Analysis**: Google Gemini AI
+- **Local Storage**: Browser localStorage
 
 ## 🧠 AI Models
 
-- **Palm Analysis**: facebook/detr-resnet-50 (Object Detection)
-- **Text Generation**: meta-llama/Llama-2-7b-chat-hf
+- **Hand Detection**: MediaPipe Hand Landmarker
+- **Palm Reading**: Google Gemini 1.5 Flash (Vision + Text)
 - **Text-to-Speech**: espnet/kan-bayashi_ljspeech_vits
 
 ## 🏗️ Project Structure
@@ -40,33 +41,40 @@ Palm Reader AI is an innovative (but mostly fun) web application that uses artif
 ## 🚀 Getting Started
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/ehernandezvilla/palm-reader-ai
    ```
 
 2. Install dependencies:
-   ```
+   ```bash
+   pnpm install
+   # or
    npm install
    ```
 
 3. Set up environment variables:
    Create a `.env.local` file with the following:
    ```
-   HUGGINGFACE_API_KEY=your_huggingface_api_key
-   PINATA_API_KEY=your_pinata_api_key
-   PINATA_SECRET_API_KEY=your_pinata_secret_key
+   GEMINI_API_KEY=your_gemini_api_key_here
    ```
+   
+   Get your Gemini API key from: https://aistudio.google.com/app/apikey
 
 4. Run the development server:
-   ```
+   ```bash
+   pnpm dev
+   # or
    npm run dev
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🔗 Dev Pinata Challenge
+## � Privacy & Security
 
-This project was created as part of the Dev Pinata challenge, which focuses on integrating Pinata's IPFS storage solutions into innovative applications. Palm Reader AI demonstrates the use of Pinata for storing and retrieving palm images and audio readings in a decentralized manner.
+- **Local Storage**: Images are stored locally in your browser's memory during analysis
+- **No File Uploads**: No images are uploaded to external servers
+- **Secure Processing**: Only base64 image data is sent to Gemini for analysis
+- **Data Control**: You control your data - delete readings anytime from your browser
 
 ## 🤝 Contributing
 
@@ -78,7 +86,10 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
 ## 🙏 Acknowledgements
 
-- [Hugging Face](https://huggingface.co/) for providing powerful AI models
-- [Pinata](https://www.pinata.cloud/) for decentralized storage solutions
-- [Unsplash](https://unsplash.com/) for the beautiful tarot card image used in the hero section
+- [Google Gemini](https://gemini.google.com/) for providing powerful multimodal AI capabilities
+- [MediaPipe](https://mediapipe.dev/) for hand detection and computer vision
+- [Next.js](https://nextjs.org/) for the amazing React framework
+- [Tailwind CSS](https://tailwindcss.com/) for beautiful styling
+- [shadcn/ui](https://ui.shadcn.com/) for elegant UI components
+- [Unsplash](https://unsplash.com/) for the beautiful mystical imagery
 - All open-source libraries and tools used in this project

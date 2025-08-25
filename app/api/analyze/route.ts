@@ -1,42 +1,52 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { InferenceClient } from '@huggingface/inference';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const hf = new InferenceClient(process.env.HUGGINGFACE_API_KEY!);
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 export async function POST(request: NextRequest) {
   try {
-    const { ipfsHash } = await request.json();
+    const { imageData } = await request.json();
 
-    if (!ipfsHash || typeof ipfsHash !== 'string') {
-      return NextResponse.json({ error: 'IPFS hash inválido.' }, { status: 400 });
+    if (!imageData || typeof imageData !== 'string') {
+      return NextResponse.json({ error: 'Image data is required.' }, { status: 400 });
     }
 
     const prompt = buildPrompt();
 
-    const result = await hf.chatCompletion({
-      provider: 'hf-inference',
-      model: 'meta-llama/Llama-3.1-8B-Instruct',
-      messages: [{ role: 'user', content: prompt }],
-      temperature: 0.6,
-      top_p: 0.85,
-      max_tokens: 300,
-    });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-    const message = result.choices?.[0]?.message?.content?.trim() || 'Could not generate a valid response. Please try again.';
-    // console.log('📜 Lectura generada:', message);
+    // Convert base64 image data to the format Gemini expects
+    const imagePart = {
+      inlineData: {
+        data: imageData.split(',')[1], // Remove data:image/jpeg;base64, prefix
+        mimeType: 'image/jpeg',
+      },
+    };
+
+    const result = await model.generateContent([prompt, imagePart]);
+    const response =  result.response;
+    const message = response.text() || 'Could not generate a valid response. Please try again.';
+
+    console.log('📜 Reading generated:', message);
     return NextResponse.json({ reading: message });
   } catch (error) {
-    console.error('❌ Error en chatCompletion:', error);
-    return NextResponse.json({ error: 'Error interno generando lectura.' }, { status: 500 });
+    console.error('❌ Error in Gemini generation:', error);
+    return NextResponse.json({ error: 'Internal server error generating reading.' }, { status: 500 });
   }
 }
 
 function buildPrompt(): string {
-  return `You are a mystical palm reader. Someone has uploaded an image of their palm and seeks insight into their destiny.
+  return `You are a mystical palm reader with ancient wisdom. I'm showing you an image of someone's palm. Please analyze the palm lines, mounts, and other features visible in the image to provide an insightful palm reading.
 
-Write a unique and insightful palm reading covering the key aspects of palmistry: love, career, health, and the future. Avoid generic phrases like "everything will be fine" or "you will be successful"—be imaginative and specific.
+Look for these key elements in the palm:
+- Heart line (love and relationships)
+- Head line (intellect and decision-making)
+- Life line (vitality and life path)
+- Fate line (career and destiny)
+- Palm mounts (personality traits)
+- Hand shape and finger characteristics
 
-Your response must be fully written, without cut-off or incomplete sentences. Use a warm and empathetic tone, and feel free to include emojis to add a magical touch.
+Provide a unique and personalized palm reading covering love, career, health, and future prospects. Be imaginative and specific, avoiding generic phrases. Use a warm, empathetic tone with mystical flair.
 
-Make sure your response is between 180 and 200 words, and ends with a clear, uplifting conclusion. Each sentence should be meaningful, and the overall reading should feel complete and satisfying.`;
+Your response should be 180-200 words, complete, and end with an uplifting conclusion. Include relevant emojis to add magical ambiance. ✨🔮`;
 }

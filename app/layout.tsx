@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Palm Reader AI",
-  description: "Pinata DEV Challenge - Palm Reader AI",
+  description: "Club Fair Palm Reader AI",
 };
 
 export default function RootLayout({

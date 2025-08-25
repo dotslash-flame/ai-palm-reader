@@ -134,10 +134,31 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Palm Reader AI. Crafted with <Heart className="inline w-4 h-4 text-red-400 mx-1" /> by DotSlash.
-            </p>
-            
+            <div className="flex flex-col items-center sm:items-start gap-1">
+              <p className="text-gray-400 text-sm">
+                © {currentYear} Palm Reader AI. Crafted with <Heart className="inline w-4 h-4 text-red-400 mx-1" /> by DotSlash for FLAME University Club Fair.
+              </p>
+              <p className="text-xs text-gray-500">
+                Based on original work by{' '}
+                <a
+                  href="https://github.com/ehernandezvilla"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-dotted hover:text-purple-300"
+                >
+                  Eric Hernández Villa
+                </a>{' '}
+                (<a
+                  href="https://github.com/ehernandezvilla/palm-reader-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-dotted hover:text-purple-300"
+                >
+                  repository
+                </a>) — MIT licensed.
+              </p>
+            </div>
+
             <div className="flex items-center gap-4 text-xs text-gray-500">
               <span>Built with Next.js</span>
               <span>•</span>

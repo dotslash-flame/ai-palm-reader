@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
                   className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  About Me
+                  About Us
                 </Button>
               </Link>
             </div>

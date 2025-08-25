@@ -5,6 +5,8 @@
 
 Palm Reader AI is an innovative (but mostly fun) web application that uses Google's Gemini AI to analyze palm images and provide mystical readings. Images are processed locally in your browser for privacy, with only the image data sent to Gemini for analysis.
 
+Note: This deployment is customized by DotSlash (FLAME University) for the Club Fair, built on top of the original open-source project by Eric Hernández Villa.
+
 ## 🌟 Features
 
 - Upload or capture palm images for AI analysis
@@ -42,6 +44,7 @@ Palm Reader AI is an innovative (but mostly fun) web application that uses Googl
 
 1. Clone the repository:
    ```bash
+   # Original upstream repository
    git clone https://github.com/ehernandezvilla/palm-reader-ai
    ```
 
@@ -69,7 +72,7 @@ Palm Reader AI is an innovative (but mostly fun) web application that uses Googl
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## � Privacy & Security
+## 🔒 Privacy & Security
 
 - **Local Storage**: Images are stored locally in your browser's memory during analysis
 - **No File Uploads**: No images are uploaded to external servers
@@ -84,7 +87,11 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
-## 🙏 Acknowledgements
+Attribution:
+- Original author: [Eric Hernández Villa](https://github.com/ehernandezvilla) — source repo: [ehernandezvilla/palm-reader-ai](https://github.com/ehernandezvilla/palm-reader-ai)
+- This fork/customization: DotSlash (FLAME University) for Club Fair
+
+## 🙏 Credits & Acknowledgements
 
 - [Google Gemini](https://gemini.google.com/) for providing powerful multimodal AI capabilities
 - [MediaPipe](https://mediapipe.dev/) for hand detection and computer vision
@@ -93,3 +100,5 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 - [shadcn/ui](https://ui.shadcn.com/) for elegant UI components
 - [Unsplash](https://unsplash.com/) for the beautiful mystical imagery
 - All open-source libraries and tools used in this project
+
+Special thanks to [Eric Hernández Villa](https://github.com/ehernandezvilla) for the original Palm Reader AI project (MIT), which served as the foundation for this DotSlash deployment.

@@ -66,11 +66,11 @@ export default function PalmReaderFlow() {
       setHandDetected(hasHand);
       
       if (!hasHand) {
-        setError("No se detectó una mano clara en la imagen. Por favor, toma una foto más clara de tu palma.");
+        setError("Did not detect a clear hand in the image. Please take a clearer photo of your palm.");
       }
     } catch (err) {
       console.error('Error validating hand:', err);
-      setError("Error al validar la imagen. Por favor, intenta de nuevo.");
+      setError("Error validating image. Please try again.");
       setHandDetected(false);
     } finally {
       setIsLoading(false);
@@ -108,7 +108,7 @@ export default function PalmReaderFlow() {
       
     } catch (err) {
       console.error('Error analyzing palm:', err);
-      setError("Error al analizar la palma. Por favor, intenta de nuevo.");
+      setError("Error analyzing palm. Please try again.");
     } finally {
       setIsLoading(false);
     }
